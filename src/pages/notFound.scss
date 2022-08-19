@@ -1,0 +1,40 @@
+@use "../scss/" as *;
+.notfound {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+  &__text {
+    font-weight: 800;
+    text-align: center;
+    font-size: 2em;
+    z-index: 1;
+  }
+
+  &__btn{
+    font-size: 1em;
+  }
+}

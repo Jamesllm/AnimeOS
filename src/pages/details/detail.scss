@@ -1,0 +1,162 @@
+@use "../../scss/" as *;
+
+.banner {
+  height: 55vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+
+.movie-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+///video active
+.list {
+  width: 100%;
+  background: $main-color;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 5px 20px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+
+  &__btn {
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 1.5rem;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(110, 110, 110, 0.452);
+  width: 10em;
+  height: 7em;
+  overflow-x: scroll;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 0;
+  transform: translate(-8.5em, -7em);
+  border-radius: 8px;
+  @include tablet {
+    width: 12em;
+    height: 8em;
+    transform: translate(-9.2em, -8.2em);
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.episode_active {
+  background: $list-color;
+  color: #fff;
+}
+
+#mas {
+  display: none;
+}
+
+.link_src {
+  text-align: center;
+  cursor: pointer;
+  padding: 0.3em;
+  @include tablet {
+    padding: 0.5em;
+  }
+}
+
+.interes-content {
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
