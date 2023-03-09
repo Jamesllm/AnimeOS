@@ -5,7 +5,7 @@ AnimeOs es una pagina de streaming de animes y peliculas completamente gratis
 
 
 
-![Logo]|[100](https://i.postimg.cc/TwQrs0MY/Captura-de-pantalla-2022-08-18-203307.png)
+[Logo]|100(https://i.postimg.cc/TwQrs0MY/Captura-de-pantalla-2022-08-18-203307.png)
 
 
 ## Author
